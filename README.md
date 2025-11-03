@@ -202,10 +202,12 @@ https://github.com/hssling/Allergy_Epidemiology_Microbiome_Microplastics_Researc
 ## 📞 **Contact Information**
 
 ### **Principal Investigator:**
-- **Name:** [Principal Investigator Name]
+- **Name:** Dr. Siddalingaiah H S
+- **Designation:** Professor, Community Medicine
 - **Institution:** Shridevi Institute of Medical Sciences & Research Hospital
 - **Location:** Tumkur, Karnataka, India
-- **Email:** [contact email]
+- **Email:** hssling@yahoo.com
+- **Phone:** 8941087719
 
 ### **Study Coordinator:**
 - **Name:** [Study Coordinator Name]
