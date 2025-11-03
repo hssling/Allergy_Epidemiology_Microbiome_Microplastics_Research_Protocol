@@ -1,0 +1,471 @@
+---
+title: "Epidemiological Study on Allergy in SIMS&RH Tumkur, Karnataka: Final Report"
+subtitle: "Prevalence, Distribution, Phenotypes, Determinants, Temporal and Spatial Associations with Emphasis on Microbiome, Microplastics, Quality of Life, Treatment Perception, and Comorbidities"
+author:
+  - name: Principal Investigator Name
+    affiliation: Shridevi Institute of Medical Sciences & Research Hospital
+  - name: Co-Investigator Name
+    affiliation: Shridevi Institute of Medical Sciences & Research Hospital
+date: "`r format(Sys.Date(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    theme: cosmo
+    highlight: tango
+    number_sections: true
+    fig_caption: true
+    df_print: paged
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+    fig_caption: true
+    latex_engine: xelatex
+  word_document:
+    toc: true
+    toc_depth: 3
+    fig_caption: true
+bibliography: references.bib
+csl: american-medical-association.csl
+---
+
+```{r setup, include=FALSE}
+# Load required packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(scales)
+library(gridExtra)
+library(ggpubr)
+library(forestplot)
+library(pheatmap)
+library(ggmap)
+library(sf)
+
+# Set global options
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      fig.align = 'center', out.width = '90%')
+options(scipen = 999, digits = 3)
+
+# Load custom functions if needed
+# source("custom_functions.R")
+```
+
+```{r load-data, include=FALSE}
+# Load analysis results
+# results <- readRDS("results/analysis_results.rds")
+# data_clean <- readRDS("results/cleaned_data.rds")
+# microbiome_results <- readRDS("results/microbiome_results.rds")
+# spatial_results <- readRDS("results/spatial_results.rds")
+```
+
+---
+
+# Executive Summary
+
+## Study Overview
+This epidemiological study investigated the prevalence, distribution, phenotypes, determinants, temporal and spatial associations of allergic diseases in Tumkur district, Karnataka, with special emphasis on microbiome composition, microplastic exposure, quality of life, treatment perceptions, and comorbidities.
+
+## Key Findings
+- **Overall Prevalence**: [X]% of the study population reported allergic diseases
+- **Most Common Allergies**: [List top 3-4 allergy types with prevalence]
+- **Key Risk Factors**: [List top 3-4 significant risk factors with OR]
+- **Microbiome Associations**: [Key findings about microbiome diversity and composition]
+- **Microplastic Exposure**: [Findings about microplastic exposure and allergy association]
+- **Quality of Life Impact**: [Summary of QoL findings]
+- **Treatment Perceptions**: [Key findings about treatment seeking and satisfaction]
+
+## Public Health Implications
+- [3-4 bullet points on implications for local health policy]
+- [Recommendations for allergy prevention and management]
+- [Suggestions for future research]
+
+---
+
+# Introduction
+
+## Background and Rationale
+Allergic diseases represent a significant global health burden, with increasing prevalence worldwide. In India, epidemiological data on allergies is limited, particularly in rural and semi-urban areas. Tumkur district in Karnataka provides a unique setting for studying allergy epidemiology due to its diverse population, environmental factors, and healthcare access patterns.
+
+Recent research has highlighted the role of microbiome dysbiosis and microplastic exposure in allergic diseases. Additionally, understanding quality of life, treatment perceptions, and comorbidities is crucial for comprehensive allergy management.
+
+## Study Objectives
+
+### Primary Objectives
+1. To determine the prevalence of allergic diseases in the study population
+2. To describe the distribution and phenotypes of allergic diseases
+3. To identify determinants of allergic diseases
+
+### Secondary Objectives
+4. To investigate temporal and spatial associations of allergic diseases
+5. To assess the role of microbiome composition in allergic diseases
+6. To evaluate microplastic exposure and its association with allergies
+7. To assess quality of life among individuals with allergic diseases
+8. To understand perceptions and practices related to allergy treatment
+9. To identify comorbidities associated with allergic diseases
+10. To explore other relevant environmental and lifestyle factors
+
+## Study Design and Methods
+[Brief summary - detailed methods in Appendix]
+
+---
+
+# Study Population and Methods
+
+## Study Setting
+- **Location**: Tumkur district, Karnataka, India
+- **Institution**: Shridevi Institute of Medical Sciences & Research Hospital
+- **Study Period**: [Start Date] to [End Date]
+- **Study Design**: Cross-sectional epidemiological study with nested case-control components
+
+## Study Population
+- **Target Population**: Residents of Tumkur district aged 5-65 years
+- **Sample Size**: 1,200 participants (1,000 main survey + 200 specialized analyses)
+- **Sampling Method**: Multi-stage stratified random sampling
+- **Inclusion Criteria**: Age 5-65 years, resident for ≥6 months, willing consent
+- **Exclusion Criteria**: Acute medical emergencies, unable to communicate, pregnant women (certain procedures)
+
+## Data Collection Methods
+
+### Phase 1: Screening and Basic Data Collection
+- Structured questionnaire administration
+- Clinical examination by trained medical professionals
+- Allergy skin prick testing
+- Anthropometric measurements
+
+### Phase 2: Specialized Investigations
+- Microbiome analysis (stool samples)
+- Microplastic assessment (environmental and biological samples)
+- Quality of life assessment
+- Treatment perception survey
+
+### Phase 3: Follow-up and Validation
+- Medical record review
+- Laboratory confirmation of diagnoses
+- Spatial analysis of environmental factors
+
+## Data Analysis Methods
+[Brief summary - detailed in Appendix]
+
+---
+
+# Results
+
+## Study Population Characteristics
+
+```{r table1, echo=FALSE}
+# Create Table 1: Sociodemographic characteristics
+# table1_data <- CreateTableOne(vars = sociodemographic_vars,
+#                              strata = "allergy_status",
+#                              data = data_clean,
+#                              factorVars = categorical_vars)
+# print(table1_data, showAllLevels = TRUE)
+```
+
+**Table 1.** Sociodemographic characteristics of study participants stratified by allergy status.
+
+**Key Findings:**
+- Total participants: [N]
+- Age range: [X] - [Y] years (mean ± SD: [X] ± [Y])
+- Gender distribution: [X]% male, [Y]% female
+- Urban/rural distribution: [X]% urban, [Y]% rural
+- Education levels: [Distribution summary]
+- Income distribution: [Summary]
+
+## Prevalence of Allergic Diseases
+
+### Overall Prevalence
+```{r prevalence-plot, fig.cap="Overall prevalence of allergic diseases by type"}
+# Prevalence plot code
+# ggplot(prevalence_data, aes(x = allergy_type, y = prevalence, fill = allergy_type)) +
+#   geom_bar(stat = "identity") +
+#   theme_minimal() +
+#   labs(x = "Allergy Type", y = "Prevalence (%)")
+```
+
+**Key Findings:**
+- Overall allergy prevalence: [X]% (95% CI: [X] - [Y])
+- Most common allergy: [Type] ([X]%)
+- Gender differences: [X]% in males vs [Y]% in females
+- Age patterns: [Description of age-specific prevalence]
+
+### Prevalence by Demographic Factors
+
+#### By Age Group
+```{r age-prevalence, fig.cap="Allergy prevalence by age group"}
+# Age-specific prevalence plot
+```
+
+#### By Gender and Residence
+```{r gender-urban-rural, fig.cap="Allergy prevalence by gender and residence type"}
+# Gender and urban/rural prevalence plot
+```
+
+## Risk Factors and Determinants
+
+### Bivariate Analysis Results
+```{r risk-factors-table}
+# Risk factors table
+# kable(risk_factors_table, caption = "Risk factors for allergic diseases (bivariate analysis)")
+```
+
+### Multivariate Analysis Results
+```{r forest-plot, fig.cap="Forest plot of risk factors from multivariate analysis"}
+# Forest plot code
+# risk_factors <- data.frame(...)
+# forestplot(risk_factors$factor, risk_factors$or, risk_factors$lower, risk_factors$upper,
+#           title = "Risk Factors for Allergy", xlab = "Odds Ratio (95% CI)")
+```
+
+**Key Findings:**
+- Strongest risk factor: [Factor] (OR: [X], 95% CI: [X]-[Y])
+- Protective factors: [List factors with OR < 1]
+- Significant environmental factors: [List]
+- Lifestyle factors: [List]
+
+## Microbiome Analysis
+
+### Alpha Diversity
+```{r microbiome-diversity, fig.cap="Microbiome alpha diversity by allergy status"}
+# Microbiome diversity plot
+# ggplot(microbiome_analysis, aes(x = factor(allergy_status), y = shannon)) +
+#   geom_boxplot(fill = "lightblue") +
+#   geom_jitter(width = 0.2, alpha = 0.5) +
+#   labs(title = "Alpha Diversity by Allergy Status",
+#        x = "Allergy Status", y = "Shannon Diversity Index")
+```
+
+### Beta Diversity
+```{r microbiome-pcoa, fig.cap="PCoA plot of microbiome beta diversity"}
+# PCoA plot code
+```
+
+### Differential Abundance Analysis
+```{r differential-abundance}
+# Differential abundance table
+# kable(diff_abundance_table, caption = "Differentially abundant taxa between allergic and non-allergic groups")
+```
+
+**Key Findings:**
+- Alpha diversity: [Higher/lower] in allergic vs non-allergic (p = [X])
+- Beta diversity: Significant differences between groups (PERMANOVA p = [X])
+- Key taxa differences: [List top differentially abundant taxa]
+- Associations with clinical phenotypes: [Findings]
+
+## Microplastic Analysis
+
+### Exposure Levels
+```{r microplastic-exposure, fig.cap="Microplastic exposure levels by sample type"}
+# Microplastic exposure plot
+```
+
+### Association with Allergy
+```{r microplastic-allergy, fig.cap="Association between microplastic exposure and allergy"}
+# Microplastic-allergy association plot
+```
+
+**Key Findings:**
+- Average microplastic concentration: [X] particles/L
+- Highest exposure in: [Sample type/source]
+- Association with allergy: [OR or correlation coefficient]
+- Polymer types identified: [List most common]
+
+## Spatial Analysis
+
+### Geographic Distribution
+```{r allergy-map, fig.cap="Spatial distribution of allergy cases in Tumkur district"}
+# Allergy prevalence map
+# ggplot() +
+#   geom_sf(data = tumkur_district, fill = "lightgray") +
+#   geom_sf(data = allergy_points, aes(color = factor(allergy_status)), size = 2, alpha = 0.7)
+```
+
+### Spatial Clustering
+```{r hotspot-map, fig.cap="Allergy hotspots in Tumkur district"}
+# Hotspot analysis map
+```
+
+**Key Findings:**
+- Spatial autocorrelation: Moran's I = [X] (p = [Y])
+- Hotspot areas: [Describe locations with high prevalence]
+- Environmental correlations: [Associations with pollution, industry, etc.]
+- Urban vs rural patterns: [Differences in spatial distribution]
+
+## Quality of Life Analysis
+
+### Overall Quality of Life
+```{r qol-scores, fig.cap="Quality of life scores by allergy status"}
+# QoL comparison plot
+```
+
+### QoL Predictors
+```{r qol-predictors, fig.cap="Predictors of quality of life impairment"}
+# QoL predictors plot
+```
+
+**Key Findings:**
+- Mean QoL score: [X] in allergic vs [Y] in non-allergic
+- Most affected domains: [List domains with largest differences]
+- Key predictors of poor QoL: [List significant factors]
+- Treatment impact on QoL: [Findings]
+
+## Treatment Perceptions and Practices
+
+### Treatment Seeking Behavior
+```{r treatment-seeking, fig.cap="Treatment seeking patterns for allergic diseases"}
+# Treatment seeking plot
+```
+
+### Treatment Satisfaction
+```{r treatment-satisfaction, fig.cap="Satisfaction with allergy treatment"}
+# Treatment satisfaction plot
+```
+
+**Key Findings:**
+- Treatment seeking rate: [X]%
+- Most common treatment type: [Type] ([X]%)
+- Satisfaction levels: [X]% satisfied/very satisfied
+- Barriers to treatment: [List main barriers]
+- Perception of treatment importance: [Findings]
+
+## Comorbidities Analysis
+
+### Comorbidity Patterns
+```{r comorbidities, fig.cap="Comorbidities associated with allergic diseases"}
+# Comorbidities plot
+```
+
+**Key Findings:**
+- Most common comorbidity: [Condition] ([X]%)
+- Comorbidity burden: Average [X] comorbidities per allergic individual
+- Associations with allergy severity: [Findings]
+- Impact on treatment: [Findings]
+
+## Subgroup Analyses
+
+### Age-Specific Findings
+- Children (5-17 years): [Key findings]
+- Adults (18-49 years): [Key findings]
+- Elderly (50+ years): [Key findings]
+
+### Gender-Specific Findings
+- Males: [Key findings]
+- Females: [Key findings]
+
+### Urban-Rural Differences
+- Urban areas: [Key findings]
+- Rural areas: [Key findings]
+
+## Sensitivity Analyses
+
+### Different Allergy Definitions
+```{r sensitivity-definitions}
+# Sensitivity analysis table
+# kable(sensitivity_table, caption = "Prevalence estimates using different allergy definitions")
+```
+
+### Missing Data Handling
+- Multiple imputation results: [Comparison with complete case analysis]
+- Impact on key findings: [Summary of robustness]
+
+---
+
+# Discussion
+
+## Summary of Key Findings
+[Summarize main findings and their implications]
+
+## Comparison with Existing Literature
+- **Global Comparisons**: [How findings compare with international studies]
+- **Indian Context**: [Comparison with other Indian studies]
+- **Regional Variations**: [Comparison with other Karnataka/district studies]
+
+## Strengths and Limitations
+
+### Strengths
+- Large, representative sample from Tumkur district
+- Comprehensive assessment including clinical, laboratory, and spatial data
+- Integration of novel factors (microbiome, microplastics)
+- Multi-disciplinary approach combining epidemiology, microbiology, and environmental science
+
+### Limitations
+- Cross-sectional design limits causal inferences
+- Self-reported data may have recall bias
+- Seasonal variations in allergy symptoms
+- Resource constraints for advanced laboratory analyses
+- Potential selection bias in hospital-based recruitment
+
+## Public Health Implications
+
+### Policy Recommendations
+1. [Specific recommendation 1]
+2. [Specific recommendation 2]
+3. [Specific recommendation 3]
+4. [Specific recommendation 4]
+5. [Specific recommendation 5]
+
+### Clinical Practice Implications
+- [Recommendations for healthcare providers]
+- [Suggestions for allergy diagnosis and management]
+- [Integration with existing health programs]
+
+### Community Health Education
+- [Strategies for public awareness]
+- [Prevention programs]
+- [Support for affected individuals]
+
+## Future Research Directions
+1. [Longitudinal studies to establish causality]
+2. [Intervention studies for prevention]
+3. [Broader geographic coverage]
+4. [Advanced omics technologies]
+5. [Health systems research on allergy care]
+
+---
+
+# Conclusions
+
+[Overall summary of study findings and implications]
+
+This comprehensive epidemiological study provides valuable insights into the burden of allergic diseases in Tumkur district and establishes a foundation for evidence-based allergy prevention and management strategies in Karnataka.
+
+---
+
+# References
+
+[Auto-generated from bibliography]
+
+---
+
+# Appendices
+
+## Appendix A: Detailed Methodology
+[Include detailed study methods, sampling procedures, data collection protocols]
+
+## Appendix B: Additional Tables and Figures
+[Include supplementary tables, detailed statistical results, additional maps and plots]
+
+## Appendix C: Questionnaire and Data Collection Forms
+[Include copies of all data collection instruments]
+
+## Appendix D: Laboratory Protocols
+[Include detailed protocols for microbiome and microplastic analysis]
+
+## Appendix E: Statistical Code
+[Include R/Python code used for analysis]
+
+## Appendix F: Study Team
+[List all study investigators, collaborators, and contributors]
+
+---
+
+**Report Generated:** `r format(Sys.Date(), '%B %d, %Y')`
+
+**Data Analysis Period:** [Start Date] to [End Date]
+
+**Principal Investigator:** [Name]
+
+**Institution:** Shridevi Institute of Medical Sciences & Research Hospital, Tumkur

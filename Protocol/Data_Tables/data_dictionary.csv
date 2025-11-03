@@ -1,0 +1,140 @@
+Variable_Name,Variable_Label,Data_Type,Value_Labels,Range,Description,Source,Required,Missing_Values
+participant_id,Participant ID,character,,000001-999999,Unique identifier for each participant,Auto-generated,Yes,No
+date_interview,Date of Interview,date,YYYY-MM-DD,,Date when questionnaire was administered,Interviewer,Yes,No
+interviewer_name,Interviewer Name,character,,,Name of the interviewer,Interviewer,Yes,No
+cluster_id,Cluster ID,integer,1-100,,Primary sampling unit identifier,Sampling frame,Yes,No
+strata,Strata,character,Urban,Rural,Semi-urban,,Sampling strata,Sampling frame,Yes,No
+sampling_weight,Sampling Weight,numeric,0.1-5.0,,Weight for survey analysis,Sampling frame,Yes,No
+age,Age in Years,integer,5-65,,Age of participant in completed years,Questionnaire,Yes,No
+age_group,Age Group,categorical,"5-17","18-34","35-49","50-64","65+",,Age categorized into groups,Derived,Yes,No
+gender,Gender,categorical,Male,Female,Other,,Gender of participant,Questionnaire,Yes,No
+education,Education Level,categorical,"No formal education","Primary school (1-5)","Middle school (6-8)","High school (9-12)","Graduate","Postgraduate","Other",,Highest education level completed,Questionnaire,Yes,No
+occupation,Occupation,categorical,"Student","Unemployed","Agricultural worker","Industrial worker","Service sector","Professional","Business","Homemaker","Retired","Other",,Current occupation,Questionnaire,Yes,No
+monthly_income,Monthly Family Income,categorical,"< ₹5,000","₹5,000 - ₹10,000","₹10,000 - ₹20,000","₹20,000 - ₹50,000","> ₹50,000",,Monthly family income category,Questionnaire,Yes,No
+religion,Religion,categorical,Hindu,Muslim,Christian,Sikh,Buddhist,Jain,Other,,Religion of participant,Questionnaire,No,Unknown
+caste,Caste Category,categorical,General,OBC,SC,ST,,Caste category,Questionnaire,No,Unknown
+urban_rural,Residence Type,categorical,Urban,Rural,Semi-urban,,Type of residence area,Questionnaire,Yes,No
+house_type,Type of House,categorical,Pucca,Semi-pucca,Kachcha,,Construction type of house,Questionnaire,No,Unknown
+household_size,Household Size,integer,1-20,,Number of people in household,Questionnaire,Yes,No
+health_insurance,Health Insurance,categorical,Yes,No,,Whether participant has health insurance,Questionnaire,No,No
+asthma,Asthma Diagnosis,categorical,0=No,1=Yes,,Doctor-diagnosed asthma,Questionnaire,Yes,No
+rhinitis,Allergic Rhinitis,categorical,0=No,1=Yes,,Doctor-diagnosed allergic rhinitis,Questionnaire,Yes,No
+dermatitis,Atopic Dermatitis,categorical,0=No,1=Yes,,Doctor-diagnosed atopic dermatitis,Questionnaire,Yes,No
+food_allergy,Food Allergy,categorical,0=No,1=Yes,,Doctor-diagnosed food allergy,Questionnaire,Yes,No
+drug_allergy,Drug Allergy,categorical,0=No,1=Yes,,Doctor-diagnosed drug allergy,Questionnaire,Yes,No
+anaphylaxis,Anaphylaxis History,categorical,0=No,1=Yes,,History of anaphylaxis,Questionnaire,No,No
+allergy_symptoms,Allergy Symptoms,categorical,0=No,1=Yes,,Any allergic symptoms reported,Questionnaire,Yes,No
+allergy_status,Allergy Status,categorical,0=No,1=Yes,,Primary outcome variable (any allergy),Derived,Yes,No
+doctor_diagnosed,Doctor Diagnosed,categorical,0=No,1=Yes,,Any allergy diagnosed by doctor,Questionnaire,Yes,No
+family_history,Family History,categorical,0=No,1=Yes,,Family history of allergies,Questionnaire,No,No
+symptom_onset_age,Age at Symptom Onset,integer,0-65,,Age when symptoms first appeared,Questionnaire,No,Unknown
+symptom_frequency,Symptom Frequency,categorical,Daily,Weekly,Monthly,Seasonal,Rarely,,How often symptoms occur,Questionnaire,No,Unknown
+symptom_timing,Symptom Timing,categorical,Morning,Afternoon,Evening,Night,No specific time,,When symptoms occur most,Questionnaire,No,Unknown
+cooking_fuel,Cooking Fuel,categorical,LPG,Kerosene,Wood,"Cow dung",Electricity,Other,,Type of cooking fuel used,Questionnaire,No,Unknown
+pet_ownership,Pet Ownership,categorical,0=No,1=Yes,,Whether household has pets,Questionnaire,No,No
+outdoor_hours,Outdoor Hours,numeric,0-24,,Hours spent outdoors per day,Questionnaire,No,Unknown
+smoking,Tobacco Smoking,categorical,"Yes, daily","Yes, occasionally",No,,Smoking status,Questionnaire,No,No
+alcohol,Alcohol Consumption,categorical,"Yes, daily","Yes, occasionally",No,,Alcohol consumption status,Questionnaire,No,No
+sleep_hours,Sleep Hours,numeric,0-24,,Hours of sleep per night,Questionnaire,No,Unknown
+exercise,Regular Exercise,categorical,0=No,1=Yes,,Whether exercises regularly,Questionnaire,No,No
+dietary_habits,Dietary Habits,categorical,Vegetarian,Non-vegetarian,Mixed,,Type of diet,Questionnaire,No,Unknown
+processed_foods,Processed Foods,categorical,0=No,1=Yes,,Regular consumption of processed foods,Questionnaire,No,No
+drinking_water_source,Drinking Water Source,categorical,"Municipal supply",Borewell,"Hand pump","River/lake",Other,,Source of drinking water,Questionnaire,No,Unknown
+diabetes,Diabetes Diagnosis,categorical,0=No,1=Yes,,Doctor-diagnosed diabetes,Questionnaire,No,No
+hypertension,Hypertension Diagnosis,categorical,0=No,1=Yes,,Doctor-diagnosed hypertension,Questionnaire,No,No
+heart_disease,Heart Disease,categorical,0=No,1=Yes,,Doctor-diagnosed heart disease,Questionnaire,No,No
+thyroid_disorders,Thyroid Disorders,categorical,0=No,1=Yes,,Doctor-diagnosed thyroid disorders,Questionnaire,No,No
+obesity,Obesity Diagnosis,categorical,0=No,1=Yes,,Doctor-diagnosed obesity,Questionnaire,No,No
+depression_anxiety,Depression/Anxiety,categorical,0=No,1=Yes,,Doctor-diagnosed mental health conditions,Questionnaire,No,No
+arthritis,Arthritis,categorical,0=No,1=Yes,,Doctor-diagnosed arthritis,Questionnaire,No,No
+cancer,Cancer Diagnosis,categorical,0=No,1=Yes,,Doctor-diagnosed cancer,Questionnaire,No,No
+comorbidities_count,Number of Comorbidities,integer,0-10,,Count of comorbid conditions,Derived,No,No
+height,Height (cm),numeric,50-200,,Height in centimeters,Clinical examination,Yes,No
+weight,Weight (kg),numeric,10-150,,Weight in kilograms,Clinical examination,Yes,No
+bmi,BMI,numeric,10-50,,Body mass index,Derived,Yes,No
+bmi_category,BMI Category,categorical,Underweight,Normal,Overweight,Obese,Unknown,,BMI categorized,Derived,Yes,No
+systolic_bp,Systolic Blood Pressure,integer,80-200,,Systolic BP in mmHg,Clinical examination,Yes,No
+diastolic_bp,Diastolic Blood Pressure,integer,50-130,,Diastolic BP in mmHg,Clinical examination,Yes,No
+pulse_rate,Pulse Rate,integer,50-150,,Pulse rate per minute,Clinical examination,Yes,No
+respiratory_rate,Respiratory Rate,integer,10-40,,Respiratory rate per minute,Clinical examination,Yes,No
+temperature,Temperature,numeric,95-105,,Body temperature in Fahrenheit,Clinical examination,No,Unknown
+oxygen_saturation,SpO2,integer,80-100,,Oxygen saturation percentage,Clinical examination,No,Unknown
+chest_shape,Chest Shape,categorical,Normal,Barrel,Pigeon,Funnel,,Shape of chest,Clinical examination,No,Unknown
+respiratory_pattern,Respiratory Pattern,categorical,Normal,Abdominal,Thoracic,Paradoxical,,Type of breathing pattern,Clinical examination,No,Unknown
+accessory_muscle_use,Accessory Muscle Use,categorical,0=No,1=Yes,,Use of accessory muscles for breathing,Clinical examination,No,No
+chest_retraction,Chest Retraction,categorical,0=No,1=Yes,,Intercostal/suprasternal retraction,Clinical examination,No,No
+chest_expansion,Chest Expansion,categorical,Equal,Reduced right,Reduced left,,Chest expansion symmetry,Clinical examination,No,Unknown
+percussion_right_lung,Right Lung Percussion,categorical,Resonant,Dull,"Stony dull",,Percussion findings right lung,Clinical examination,No,Unknown
+percussion_left_lung,Left Lung Percussion,categorical,Resonant,Dull,"Stony dull",,Percussion findings left lung,Clinical examination,No,Unknown
+breath_sounds,Breath Sounds,categorical,Normal,Bronchial,Bronchovesicular,Vesicular,,Type of breath sounds,Clinical examination,No,Unknown
+crepitations,Crepitations,categorical,0=No,1=Yes,,Presence of crepitations,Clinical examination,No,No
+crepitations_location,Crepitations Location,character,,,Location of crepitations if present,Clinical examination,No,N/A
+rhonchi,Rhonchi,categorical,0=No,1=Yes,,Presence of rhonchi,Clinical examination,No,No
+rhonchi_location,Rhonchi Location,character,,,Location of rhonchi if present,Clinical examination,No,N/A
+wheeze,Wheeze,categorical,0=No,1=Yes,,Presence of wheeze,Clinical examination,No,No
+wheeze_location,Wheeze Location,character,,,Location of wheeze if present,Clinical examination,No,N/A
+pleural_rub,Pleural Rub,categorical,0=No,1=Yes,,Presence of pleural rub,Clinical examination,No,No
+peak_flow_rate,Peak Flow Rate,numeric,0-800,,Peak expiratory flow rate in L/min,Clinical examination,No,Unknown
+predicted_pef,Predicted PEF,numeric,0-800,,Predicted peak flow based on age/height,Clinical examination,No,Unknown
+pef_percentage,PEF Percentage,numeric,0-200,,Percentage of predicted PEF,Clinical examination,No,Unknown
+nasal_examination,Nasal Examination,categorical,Normal,Abnormal,,Overall nasal examination findings,Clinical examination,No,Unknown
+throat_examination,Throat Examination,categorical,Normal,Abnormal,,Overall throat examination findings,Clinical examination,No,Unknown
+ear_examination,Ear Examination,categorical,Normal,Abnormal,,Overall ear examination findings,Clinical examination,No,Unknown
+skin_condition,Skin Condition,categorical,Normal,Dry,Oily,Lesions,,General skin condition,Clinical examination,No,Unknown
+eczema,Eczema,categorical,0=No,1=Yes,,Presence of eczema,Clinical examination,No,No
+eczema_location,Eczema Location,character,,,Location of eczema if present,Clinical examination,No,N/A
+urticaria,Urticaria,categorical,0=No,1=Yes,,Presence of urticaria,Clinical examination,No,No
+urticaria_location,Urticaria Location,character,,,Location of urticaria if present,Clinical examination,No,N/A
+contact_dermatitis,Contact Dermatitis,categorical,0=No,1=Yes,,Presence of contact dermatitis,Clinical examination,No,No
+contact_dermatitis_location,Contact Dermatitis Location,character,,,Location of contact dermatitis if present,Clinical examination,No,N/A
+skin_prick_test_date,SPT Date,date,YYYY-MM-DD,,Date of skin prick testing,Clinical examination,No,N/A
+allergens_tested,Allergens Tested,character,,,List of allergens tested,Clinical examination,No,N/A
+spt_positive_count,SPT Positive Count,integer,0-20,,Number of positive SPT results,Clinical examination,No,No
+spt_grading,SPT Grading,categorical,Monosensitive,Oligosensitive,Polysensitive,,SPT sensitivity grading,Clinical examination,No,Unknown
+spt_adverse_reaction,SPT Adverse Reaction,categorical,0=No,1=Yes,,Any adverse reaction to SPT,Clinical examination,No,No
+allergy_phenotype,Allergy Phenotype,categorical,"Early onset","Late onset",Intermittent,Persistent,,Clinical phenotype classification,Clinical examination,No,Unknown
+allergy_severity,Allergy Severity,categorical,Mild,Moderate,Severe,,Severity of allergic condition,Clinical examination,No,Unknown
+treatment_recommended,Treatment Recommended,character,,,Recommended treatment plan,Clinical examination,No,N/A
+referral_needed,Referral Needed,categorical,0=No,1=Yes,,Whether referral to specialist needed,Clinical examination,No,No
+referral_specialty,Referral Specialty,character,,,Specialty for referral if needed,Clinical examination,No,N/A
+follow_up_date,Follow-up Date,date,YYYY-MM-DD,,Recommended follow-up date,Clinical examination,No,N/A
+qol_1,QoL: Daily Activities,numeric,1-5,,Quality of life item 1,Questionnaire,No,No
+qol_2,QoL: Frustration,numeric,1-5,,Quality of life item 2,Questionnaire,No,No
+qol_3,QoL: Sleep,numeric,1-5,,Quality of life item 3,Questionnaire,No,No
+qol_4,QoL: Worry,numeric,1-5,,Quality of life item 4,Questionnaire,No,No
+qol_5,QoL: Social Life,numeric,1-5,,Quality of life item 5,Questionnaire,No,No
+qol_6,QoL: Tiredness,numeric,1-5,,Quality of life item 6,Questionnaire,No,No
+qol_7,QoL: Work Performance,numeric,1-5,,Quality of life item 7,Questionnaire,No,No
+qol_8,QoL: Overall Rating,numeric,1-10,,Overall quality of life rating,Questionnaire,No,No
+qol_total,QoL Total Score,numeric,1-5,,Average of QoL items 1-7,Derived,No,No
+treatment_sought,Treatment Sought,categorical,0=No,1=Yes,,Whether sought medical treatment,Questionnaire,No,No
+treatment_type,Treatment Type,categorical,"Allopathic medicine","Homeopathic medicine","Ayurvedic medicine","Traditional remedies",None,,Type of treatment received,Questionnaire,No,Unknown
+treatment_satisfaction,Treatment Satisfaction,categorical,"Very satisfied",Satisfied,Neutral,Dissatisfied,"Very dissatisfied",,Satisfaction with treatment,Questionnaire,No,Unknown
+preventive_measures,Preventive Measures,categorical,0=No,1=Yes,,Use of preventive measures,Questionnaire,No,No
+preventive_measures_desc,Preventive Measures Description,character,,,Description of preventive measures,Questionnaire,No,N/A
+allergy_cause_perception,Perceived Cause of Allergy,character,,,Participant's perception of allergy causes,Questionnaire,No,Unknown
+treatment_importance,Treatment Importance,categorical,"Very important",Important,"Somewhat important","Not important",,Perceived importance of allergy treatment,Questionnaire,No,Unknown
+probiotic_consumption,Probiotic Consumption,categorical,0=No,1=Yes,,Regular consumption of probiotics,Questionnaire,No,No
+antibiotic_use_6months,Antibiotic Use (6 months),categorical,0=No,1=Yes,,Antibiotic use in past 6 months,Questionnaire,No,No
+antibiotic_frequency,Antibiotic Frequency,integer,0-12,,Number of antibiotic courses in 6 months,Questionnaire,No,Unknown
+plastic_bottle_use,Plastic Bottle Use,categorical,0=No,1=Yes,,Regular use of plastic water bottles,Questionnaire,No,No
+plastic_packaging_food,Plastic Packaging Food,categorical,Daily,Weekly,Monthly,"Rarely/Never",,Frequency of food from plastic packaging,Questionnaire,No,No
+plastic_industry_work,Plastic Industry Work,categorical,0=No,1=Yes,,Work in plastic-related industry,Questionnaire,No,No
+latitude,Latitude,numeric,-90 to 90,,GPS latitude coordinate,Questionnaire,No,Unknown
+longitude,Longitude,numeric,-180 to 180,,GPS longitude coordinate,Questionnaire,No,Unknown
+industrial_distance,Distance to Industry,numeric,0-100,,Distance to nearest industrial area in km,Questionnaire,No,Unknown
+highway_distance,Distance to Highway,numeric,0-100,,Distance to nearest highway in km,Questionnaire,No,Unknown
+symptom_season,Symptom Season,categorical,Summer,Monsoon,Winter,Spring,"No seasonal variation",,Season when symptoms worsen,Questionnaire,No,Unknown
+symptom_time_of_day,Symptom Time of Day,categorical,Morning,Afternoon,Evening,Night,,Time when symptoms worst,Questionnaire,No,Unknown
+microbiome_consent,Microbiome Sample Consent,categorical,0=No,1=Yes,,Consent for microbiome sample collection,Consent form,No,No
+microplastic_consent,Microplastic Sample Consent,categorical,0=No,1=Yes,,Consent for microplastic sample collection,Consent form,No,No
+sample_id,Sample ID,character,,S001-S999,,Unique identifier for biological samples,Lab system,No,N/A
+stool_sample_collected,Stool Sample Collected,categorical,0=No,1=Yes,,Whether stool sample was collected,Lab,No,No
+water_sample_collected,Water Sample Collected,categorical,0=No,1=Yes,,Whether water sample was collected,Lab,No,No
+dust_sample_collected,Dust Sample Collected,categorical,0=No,1=Yes,,Whether dust sample was collected,Lab,No,No
+sample_collection_date,Sample Collection Date,date,YYYY-MM-DD,,Date samples were collected,Lab,No,N/A
+sample_storage_date,Sample Storage Date,date,YYYY-MM-DD,,Date samples were stored,Lab,No,N/A
+sample_processing_date,Sample Processing Date,date,YYYY-MM-DD,,Date samples were processed,Lab,No,N/A
+lab_technician,Lab Technician,character,,,Name of lab technician,Lab,No,Unknown
+sample_quality,Sample Quality,categorical,Good,Fair,Poor,,Quality assessment of collected samples,Lab,No,Unknown
+sample_contamination,Sample Contamination,categorical,0=No,1=Yes,,Evidence of contamination,Lab,No,No
